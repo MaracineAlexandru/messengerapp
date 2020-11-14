@@ -1,12 +1,19 @@
 package entity;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
 public class Messages {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int messageId;
     private String message;
     private LocalDate date;
+    @ManyToOne
     private User sender;
+    @ManyToOne
     private User receiver;
 
     public Messages(String message, LocalDate date, User sender, User receiver) {

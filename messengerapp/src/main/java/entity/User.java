@@ -1,17 +1,22 @@
 package entity;
 
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int userAccountId;
     private String name;
     private String surname;
     private String username;
     private String password;
+
+    @OneToMany
+    List<Messages> messages;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     List<User> friends = new ArrayList<>();
