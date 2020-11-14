@@ -16,7 +16,7 @@ public class User {
     private String password;
 
     @OneToMany
-    List<Messages> messages;
+    List<Messages> messagesList= new ArrayList<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     List<User> friends = new ArrayList<>();
@@ -65,5 +65,9 @@ public class User {
 
     public void addUser(User user){
         friends.add(user);
+    }
+
+    public void addMessage(Messages messages){
+        messagesList.add(messages);
     }
 }
