@@ -6,6 +6,10 @@ import java.time.LocalDate;
 @Entity
 public class Messages {
 
+    public int getMessageId() {
+        return messageId;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int messageId;

@@ -7,6 +7,10 @@ import java.util.List;
 @Entity
 public class User {
 
+    public int getUserAccountId() {
+        return userAccountId;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userAccountId;
