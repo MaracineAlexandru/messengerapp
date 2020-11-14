@@ -7,9 +7,7 @@ import java.util.List;
 @Entity
 public class User {
 
-    public int getUserAccountId() {
-        return userAccountId;
-    }
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,6 +33,13 @@ public class User {
     public User() {
     }
 
+    public int getUserAccountId() {
+        return userAccountId;
+    }
+
+    public void setUserAccountId(int userAccountId) {
+        this.userAccountId = userAccountId;
+    }
     public String getName() {
         return name;
     }
